@@ -1,0 +1,17 @@
+{#
+  Title: Upcoming Sessions
+  Description: Block to add an upcoming sessions list
+  Category: grit
+  Icon: superhero-alt
+  Keywords: upcoming session, upcoming, session, compass
+  Mode: edit
+  SupportsMode: false
+#}
+
+{% if fields.sessions or fields.sessions and is_preview %}
+<ul class="list-none">
+  {% for session in fields.sessions %}
+    <li class="flex flex-col min-[420px]:flex-row min-[782px]:flex-col xl:flex-row gap-1 items-center justify-between bg-white px-4 xl:px-8 py-4 rounded-[15px]"><span class="text-[25px] xl:text-[30px] font-poppins m-0 p-0">{{ session.session | abbreviate_month }}</span> <a class="wp-block-button__link" href="{{ fn('get_permalink', 1192) }}?culture_academy_dates={{ session.session|url_encode }}">Reserve</a></li>
+  {% endfor %}
+</ul>
+{% endif %}

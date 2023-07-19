@@ -1,0 +1,19 @@
+{# This file demonstrates using most of the index.twig template and modifying
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "index.twig" %}
+
+{% block content %}
+	<section tabindex="-1" class="bg-light pt-16 py-8">
+		<div class="wrapper">
+			<div class="post-type-{{ post.post_type }}" id="post-{{post.ID}}">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+					{% for post in posts %}
+						{% include [ 'partial/tease-'~post.post_type~'.twig', 'partial/tease.twig' ] %}
+					{% endfor %}
+					{% include 'partial/pagination.twig' with { pagination: posts.pagination({ show_all: false, mid_size: 3, end_size: 2 }) } %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+.be-ix-link-block .be-related-link-container .be-label {
+  @apply leading-[1.2] xl:leading-[1.1] text-primary text-[1.75rem] sm:text-[2.25rem] xl:text-[2.5rem] font-trenda-semibold normal-case mb-5 xl:mb-0;
+}
+
+.be-ix-link-block .be-related-link-container {
+  @apply flex flex-col xl:flex-row justify-center xl:items-center xl:gap-[153px] min-h-[20rem] xl:min-h-[12.5rem] m-0;
+}
+
+.be-ix-link-block .be-related-link-container .be-list {
+  @apply flex flex-col xl:text-left;
+}
+
+.be-ix-link-block .be-related-link-container .be-list .be-list-item {
+  @apply mb-6 xl:mb-4
+}
+
+.be-ix-link-block .be-related-link-container .be-list .be-list-item .be-related-link {
+  @apply font-poppins text-link text-base leading-[1.5];
+}

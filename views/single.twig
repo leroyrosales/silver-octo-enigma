@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+
+{% block content %}
+{% set previous_post_link = fn('ig_grit_get_previous_post') %}
+{% set next_post_link = fn('ig_grit_get_next_post') %}
+
+	<section id="post-{{ post.ID }}">
+		<header class="text-center">
+			<h1 class="pt-12 lg:pt-24 px-4 md:px-6 text-primary font-poppins normal-case tracking-normal pb-8 mb-0 bg-secondary">{{ post.title }}</h1>
+			<address class="bg-secondary px-4 md:px-6 font-poppins not-italic text-xl pb-12 uppercase tracking-[.2em]" rel="author">{{ post.author }}</address>
+			<div class="featured-img-gradient{% if not post.thumbnail or not post.vimeo_video_id %} py-12{% endif %}">
+				{% if post.vimeo_video_id %}
+					{% include '/component/video.twig' %}
+				{% endif %}
+				{% if post.thumbnail and not post.vimeo_video_id %}
+				<picture>
+					<img class="aspect-square lg:aspect-auto w-full h-full max-w-[1240px] max-h-[500px] object-cover mx-auto pb-4 lg:pb-8" srcset="{{ post.thumbnail.srcset }}" alt="{{ post.thumbnail.alt ?: post.thumbnail.title }}"/>
+				</picture>
+				{% endif %}
+			</div>
+		</header>
+
+		<article class="max-w-[700px] mx-auto pt-8 pb-16 px-4 md:px-6">
+			{{post.content}}
+		</article>
+
+		<nav>
+				<ul class="grid grid-cols-2">
+						{% if previous_post_link %}
+								<li class="text-left">{{ previous_post_link }}</li>
+						{% else %}
+							<li class="text-left bg-white py-[22px] px-[30px] lg:px-[55px] lg:py-[64px]"></li>
+						{% endif %}
+						{% if next_post_link %}
+								<li class="text-right">{{ next_post_link }}</li>
+						{% else %}
+							<li class="text-right bg-white py-[22px] px-[30px] lg:px-[55px] lg:py-[64px]"></li>
+						{% endif %}
+				</ul>
+		</nav>
+	</article>
+	{% if cta %}
+		<button class="button button-wood-background text-center">
+				<a class="font-poppins flex flex-col lg:flex-row justify-center items-center gap-4 py-8" href="{{ cta.url }}" target="{{ cta.target }}" {% if cta.target == "_blank" %}rel="noopener"{% endif %}>{{ cta.title }} <i class="fa-solid fa-arrow-right-long"></i> {% if cta.target == "_blank" %}<span class="sr-only">opens in new window</span>{% endif %}</a>
+		</button>
+	{% endif %}
+
+{% endblock %}

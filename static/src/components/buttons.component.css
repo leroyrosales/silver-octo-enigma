@@ -1,0 +1,43 @@
+a.wp-block-button__link {
+  @apply font-poppins text-base border-solid border-2 font-medium px-12 py-4 hover:no-underline focus:no-underline;
+}
+
+/* Primary button & Icon button */
+.is-style-primary-button a.wp-block-button__link,
+.is-style-icon-button a.wp-block-button__link {
+  @apply text-primary border-primary bg-white hover:bg-primary hover:text-white focus:border-accent focus:bg-primary focus:text-white;
+}
+
+.has-primary-background-color .is-style-primary-button a.wp-block-button__link,
+.has-black-background-color .is-style-primary-button a.wp-block-button__link {
+  @apply bg-primary text-white border-white hover:text-primary hover:bg-white;
+}
+
+.is-style-icon-button a.wp-block-button__link {
+  @apply text-xl rounded-[10px] flex justify-between content-center p-6 gap-24;
+}
+
+.is-style-icon-button a.wp-block-button__link .svg-inline--fa {
+  @apply h-auto;
+}
+
+/* Secondary button */
+.is-style-secondary-button a.wp-block-button__link {
+  @apply text-white border-primary bg-primary hover:bg-white hover:text-primary focus:border-accent focus:bg-white focus:text-primary;
+}
+
+.has-primary-background-color .is-style-secondary-button a.wp-block-button__link,
+.has-black-background-color .is-style-secondary-button a.wp-block-button__link {
+  @apply bg-white text-primary border-white hover:text-white hover:bg-primary focus:border-accent;
+}
+
+/* Tertiary button */
+.is-style-tertiary-button a.wp-block-button__link {
+  @apply text-[#333333] border-tertiary bg-tertiary hover:bg-white hover:text-primary focus:border-accent focus:bg-white focus:text-primary;
+}
+
+.has-primary-background-color .is-style-tertiary-button a.wp-block-button__link,
+.has-black-background-color .is-style-tertiary-button a.wp-block-button__link {
+  @apply bg-tertiary text-[#333333] border-tertiary hover:text-primary hover:bg-white focus:border-accent focus:bg-white focus:text-primary;
+}
+

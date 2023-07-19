@@ -1,0 +1,45 @@
+{% set featured_video = content.acf_fc_layout == 'featured_video' %}
+
+    {% for content in content %}
+      {% if content.acf_fc_layout == 'fullwidth_wysiwyg' %}
+        {% include 'partial/flex-content/fullwidth-wysiwyg.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'column_wysiwyg' %}
+        {% include 'partial/flex-content/column-wysiwyg.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'cutout_wysiwyg' %}
+        {% include 'partial/flex-content/cutout-wysiwyg.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'promo_unit' %}
+          {% include 'partial/flex-content/promo-unit.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'banner' %}
+        {% include 'partial/flex-content/banner.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'cta' %}
+        {% include 'partial/flex-content/cta.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'featured_posts' %}
+        {% include 'partial/flex-content/featured-posts.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'featured_video' %}
+        {% include 'partial/flex-content/featured-video.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'staff' %}
+        {% include 'partial/flex-content/staff.twig' %}
+      {% endif %}
+      {% if content.acf_fc_layout == 'acclaim' %}
+        {% include 'partial/flex-content/acclaim.twig' %}
+      {% endif %}
+    {% endfor %}
+
+{% if featured_video is defined %}
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+  <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+  <script>
+      const players = Plyr.setup('.js-player', {
+          controls: ['play-large']
+      });
+  </script>
+{% endif %}
+

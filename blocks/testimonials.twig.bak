@@ -1,0 +1,38 @@
+{#
+  Title: Testimonial Cards
+  Description: Block to add a card with testimonials
+  Category: grit
+  Icon: smiley
+  Keywords: testiomnials, card, compass
+  Mode: edit
+  SupportsMode: false
+#}
+
+{% if fields.testimonials %}
+<section class="swiper testimonial-swiper py-16 {{ classes }}">
+    <div class="swiper-wrapper items-stretch" aria-labelledby="testimonial-scrollbar">
+    {% for testimonial in fields.testimonials %}
+        <div class="swiper-slide" data-{{ testimonial.id }} style="height: auto;">
+            <article class="flex flex-col shadow-lg px-8 lg:px-12 py-4 h-full">
+                {% if testimonial.testimonial %}
+                    <svg class="fill-secondary mb-8" width="52" height="42" viewBox="0 0 52 42" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24.1429 20.3226H13.1688C13.3377 13.7177 16.8831 11.5161 24.1429 11.3468V0C7.5974 0.508058 0 6.94354 0 21.5081V42H24.1429V20.3226ZM52 20.3226H41.026C41.1948 13.7177 44.7403 11.5161 52 11.3468V0C35.4545 0.508058 27.8571 6.94354 27.8571 21.5081V42H52V20.3226Z" fill="#56E13B"/>
+                    </svg>
+
+                    <p class="swiper-no-swiping">{{ testimonial.testimonial }}"</p>
+                {% endif %}
+                {% if testimonial.cite %}
+                    <span class="mb-16 swiper-no-swiping lg:max-w-[85%]">&mdash; {{ testimonial.cite }}</span>
+                {% endif %}
+                {% if testimonial.name %}
+                    <span class="h4 mt-auto mb-2 text-primary swiper-no-swiping">{{ testimonial.role }}</span>
+                    <p class="h3 text-primary swiper-no-swiping">{{ testimonial.name }}</p>
+                {% endif %}
+            </article>
+        </div>
+    {% endfor %}
+    </div>
+    <nav class="swiper-scrollbar" id="testimonial-scrollbar"></nav>
+</section>
+{% endif %}
+

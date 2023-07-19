@@ -1,0 +1,7 @@
+composer.lock
+.idea
+.DS_Store
+node_modules
+_dist/
+static/fonts/
+static/images/

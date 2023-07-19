@@ -1,0 +1,94 @@
+{
+    "key": "group_62cc3c9d7c746",
+    "title": "Block: Video",
+    "fields": [
+        {
+            "key": "field_62cc3cb1d58ec",
+            "label": "Vimeo Video ID",
+            "name": "vimeo_video_id",
+            "type": "text",
+            "instructions": "Use the number in the video url.\r\n<br><em>Example: Video ID for https:\/\/vimeo.com\/67995158 is <strong>67995158<\/strong><\/em>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_62cc3cd3d58ed",
+            "label": "Video Description",
+            "name": "video_description",
+            "type": "textarea",
+            "instructions": "Used to hyperlink to the video for accessibility",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62cc3cb1d58ec",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_62cc701cab01e",
+            "label": "Video Thumbnail",
+            "name": "video_thumbnail",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/video"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1657565544
+}

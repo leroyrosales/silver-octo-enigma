@@ -1,0 +1,51 @@
+.carousel-slider .blaze-slider.dragging .blaze-track {
+  cursor: grabbing;
+}
+
+/* .carousel-slider .blaze-track > * {
+  max-height: 390px;
+  min-height: 390px;
+} */
+
+/* pagination buttons */
+.carousel-slider .blaze-pagination {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+}
+
+.blaze-pagination button {
+  font-size: 0;
+  width: 25px;
+  height: 4px;
+  outline: none;
+  border: none;
+  background-color: rgba( 25, 40, 0, 0.3 );
+  cursor: pointer;
+  transition: transform 200ms ease, background-color 300ms ease;
+}
+
+.blaze-pagination button.active {
+  @apply bg-primary;
+}
+
+/* fix layout shifts */
+.carousel-slider .blaze-slider {
+  --slides-to-show: 1;
+}
+
+@media (min-width: 768px) {
+  .carousel-slider .blaze-slider {
+    --slides-to-show: 2;
+  }
+  /* .carousel-slider .blaze-track > * {
+    max-height: 480px;
+    min-height: 480px;
+  } */
+}
+
+@media (min-width: 1280px) {
+  .carousel-slider .blaze-slider {
+    --slides-to-show: 3;
+  }
+}

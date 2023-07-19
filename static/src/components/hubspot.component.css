@@ -1,0 +1,193 @@
+/* HubSpot custom styles */
+.hs-form label {
+  @apply block font-poppins mb-1 text-primary text-lg leading-6;
+}
+
+.has-primary-background-color .hs-form label,
+.has-primary-background-color .hs-field-desc,
+.has-primary-background-color .legal-consent-container .hs-richtext {
+  @apply text-white;
+}
+
+.has-grey-background-color .hs-form label,
+.has-grey-background-color .hs-field-desc,
+.has-light-blue-background-color .hs-form label,
+.has-light-blue-background-color .hs-field-desc {
+  @apply text-primary;
+}
+
+.has-grey-background-color .hbspt-form form a {
+  @apply text-link;
+}
+
+.hs-field-desc {
+  @apply pb-2;
+}
+
+.hubspot-form .legal-consent-container~.hs_recaptcha {
+  @apply p-0;
+}
+
+div.hs-form-field {
+  margin-bottom: 1.5rem;
+}
+
+.hs-input {
+  @apply text-[#333];
+}
+
+.hs-form .hs-form-radio-display {
+  @apply text-base font-poppins;
+}
+
+.hs-form .hs-richtext {
+  @apply mb-4;
+}
+
+.has-background .hs-form textarea {
+  @apply border-none font-poppins;
+}
+
+textarea, .gform_wrapper .gform_body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper .gform_body textarea, .gform_wrapper form .ginput_container_fileupload input[type="file"], .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_left select, .gform_wrapper ul.gform_fields li.gfield div.ginput_complex span.ginput_right select, .gform_wrapper ul.gform_fields li.gfield select, .gform_wrapper .ginput_complex.ginput_container_address .ginput_right select, input[type="search"], .wp-block-search .wp-block-search__input, .hs-form.hs-custom-style>div .hs-input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]), .hs-form.hs-custom-style fieldset .hs-input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]) {
+  padding: 0.75em;
+  border-radius: 0.25rem;
+  border: 1px solid #00283c;
+  background: #fff;
+  color: #00283c;
+  font-family: "Poppins",sans-serif;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  transition: box-shadow .3s ease-in-out, background .3s ease-in-out, color .3s ease-in-out;
+}
+
+.hbspt-form .hs-custom-style>div input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]),
+.hbspt-form .hs-custom-style fieldset input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]) {
+  @apply p-3 w-full border-primary border rounded;
+}
+
+.hbspt-form .hs-custom-style>div input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]):active,
+.hbspt-form .hs-custom-style>div input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]):focus {
+  box-shadow: 0 0 0 2px transparent, 0 0 0 3px #00dae8;
+  background: #f2fdfe;
+}
+
+.hs-custom-style>div>div:last-of-type .hs-input:not([type=checkbox]):not([type=radio]), .hs-custom-style fieldset>div:last-of-type .hs-input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+  @apply p-3 w-full border-primary border rounded;
+}
+
+.hs-form ul {
+  @apply p-0;
+  list-style-type: none;
+}
+
+.hbspt-form .hs-custom-style .hs-input[type="text"] {
+  @apply min-w-full max-w-full;
+}
+.hbspt-form .hs-custom-style .hs-input[type="radio"] {
+  @apply mr-2;
+}
+
+.hbspt-form .hs-custom-style .hs-input[type="checkbox"] {
+  @apply hidden;
+}
+
+.hs-form-booleancheckbox span {
+  @apply pt-2 pb-8 lg:pt-8 lg:pb-8;
+}
+
+.hs-form-booleancheckbox span {
+  @apply relative pl-20;
+}
+
+.hs-form-booleancheckbox span:before {
+  content: "";
+  @apply border-primary border-[1.5px] border-solid w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] rounded-full top-2 left-0 absolute;
+}
+
+.hs-form-booleancheckbox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.hs-form-booleancheckbox input[type="checkbox"]:checked + span:before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='25' fill='%23FFFF00'/%3E%3Cline x1='21.4287' y1='33.106' x2='35.368' y2='19.1667' stroke='%23192800' stroke-width='1.5' stroke-linecap='square'/%3E%3Cline x1='21.4393' y1='33.0952' x2='15' y2='26.6558' stroke='%23192800' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+  @apply border-[1.5px] border-solid;
+}
+
+.hbspt-form .hs-custom-style .legal-consent-container .hs-richtext {
+  @apply text-sm;
+}
+
+.hbspt-form .hs-custom-style .legal-consent-container .hs-richtext a {
+  @apply underline hover:no-underline;
+}
+
+.hbspt-form .hs-submit {
+  @apply mx-auto text-center font-poppins hover:cursor-pointer rounded-full py-3 xl:py-4 px-4 xl:px-12;
+}
+
+.hs-form-radio label span {
+  @apply text-center font-poppins text-white hover:cursor-pointer hover:text-primary table bg-primary hover:bg-white rounded-full py-3 xl:py-4 px-4 xl:px-12 border-primary border-2;
+}
+
+.has-primary-background-color .hbspt-form .hs-submit,
+.has-primary-background-color .hs-form-radio label span {
+  @apply border-accent border-2 text-accent hover:text-primary focus-within:text-primary table bg-primary hover:bg-accent focus-within:bg-accent;
+}
+
+.has-grey-background-color .hbspt-form .hs-submit {
+  @apply border-primary text-white;
+}
+
+.hs-form-checkbox label span {
+  @apply font-poppins text-primary hover:cursor-pointer hover:text-white inline-block bg-transparent hover:bg-primary rounded-full py-4 px-8 border-primary border-2;
+}
+
+.hbspt-form .hs-submit input.hs-button.primary.large {
+  @apply text-[1rem] lg:text-[1rem];
+}
+
+.hbspt-form .hs-button {
+ @apply hover:cursor-pointer;
+}
+
+.has-background .hbspt-form .hs-submit {
+  @apply hover:text-primary;
+}
+
+.hs-form .inputs-list {
+  @apply flex flex-col flex-wrap md:flex-row gap-4;
+}
+
+form .hs-form-field input::placeholder,
+form .hs-form-field textarea::placeholder {
+  @apply font-poppins text-primary;
+}
+
+.hs-form-required {
+  @apply text-[#F44923];
+}
+
+.has-background:has(>.hubspot-form) {
+  @apply rounded-[10px] p-12;
+}
+
+/* .hs-form-field .invalid.error {
+  @apply border border-solid border-[#B52A0D];
+} */
+
+.hbspt-form .hs-custom-style > div input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]).error {
+  @apply border-[#B52A0D];
+}
+
+.hs-form label.hs-error-msg {
+  @apply border border-solid border-[#B52A0D] bg-[#6A2A21] text-white pl-2 py-2 mr-2 mt-3 text-base;
+}
+
+.hs-error-msg::after {
+  content: '*';
+  @apply text-[#F44923];
+}
+
+.hs-error-msgs li {
+  @apply p-0 m-0 w-full;
+}

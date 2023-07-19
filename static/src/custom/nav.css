@@ -1,0 +1,86 @@
+nav li.current_page_item a {
+    @apply border-b-[5px] border-primary;
+}
+
+.main-menu-btn-icon,
+.main-menu-btn-icon::before,
+.main-menu-btn-icon::after {
+    position: absolute;
+    top: 50%;
+    right: 1px;
+    height: 2px;
+    width: 35px;
+    background: #fff;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.main-menu-btn-icon {
+    height: 0;
+    background: transparent;
+}
+
+.main-menu-btn-icon::before {
+    content: "";
+    top: -6px;
+    left: 0;
+}
+
+.main-menu-btn-icon::after {
+    content: "";
+    top: 6px;
+    left: 0;
+}
+
+.opened .main-menu-btn-icon::after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.opened .main-menu-btn-icon::before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.menu-main {
+    @apply bg-primary w-full text-center;
+    transition: opacity .2s ease-in;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.opened .menu-main {
+    @apply min-h-full;
+    opacity: 1;
+    height: auto;
+    transition: opacity .2s ease-out;
+    overflow: auto;
+}
+
+nav.opened {
+    @apply pb-32 h-screen;
+}
+
+button.opened {
+    @apply border-accent border;
+}
+
+.ig-breadcrumbs {
+    @apply text-center py-2 bg-primary text-white;
+}
+
+.ig-breadcrumbs .home-breadcrumb {
+    @apply fill-accent inline max-h-4 relative -top-[2px];
+}
+
+.ig-breadcrumbs a {
+    @apply text-family-blue;
+}
+
+.has-primary-background-color .ig-breadcrumbs a,
+.has-black-background-color .ig-breadcrumbs a {
+  @apply text-family-blue;
+}

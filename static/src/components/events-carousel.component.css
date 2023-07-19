@@ -1,0 +1,45 @@
+.events-carousel-slider.dragging .blaze-track {
+  cursor: grabbing;
+}
+
+.events-carousel-slider .blaze-track > * {
+  max-height: 550px;
+  min-height: 550px;
+}
+
+/* pagination buttons */
+.blaze-pagination {
+  display: flex;
+  gap: .5rem;
+  justify-content: start;
+}
+
+.blaze-pagination button {
+  font-size: 0;
+  width: 25px;
+  height: 4px;
+  outline: none;
+  border: none;
+  background-color: rgba( 25, 40, 0, 0.3 );
+  cursor: pointer;
+  transition: transform 200ms ease, background-color 300ms ease;
+}
+
+.blaze-pagination button.active {
+  @apply bg-primary;
+}
+
+/* fix layout shifts */
+.events-carousel-slider {
+  --slides-to-show: 1;
+}
+
+@media (max-width: 768px) {
+  .events-carousel-slider {
+    --slides-to-show: 1;
+  }
+  .blaze-pagination {
+    justify-content: center;
+  }
+}
+

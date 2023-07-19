@@ -1,0 +1,41 @@
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+  mode: 'development',
+  entry: './static/src/main.js',
+  output: {
+    filename: 'main.bundle.js',
+    path: path.resolve(__dirname, 'assets/dist'),
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [require('tailwindcss'), require('autoprefixer')],
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
+};

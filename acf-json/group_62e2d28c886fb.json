@@ -1,0 +1,44 @@
+{
+    "key": "group_62e2d28c886fb",
+    "title": "Block: Hubspot form",
+    "fields": [
+        {
+            "key": "field_62e2d329788b7",
+            "label": "Form ID",
+            "name": "form_id",
+            "type": "text",
+            "instructions": "Please use the ID for the HubSpot form (in the embed code, it's the long number immediately after \"formId:\"",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "bfd3f79e-c986-40d1-904a-fb84f4d2f70e",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hubspot"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1659032459
+}

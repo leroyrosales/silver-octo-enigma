@@ -1,0 +1,35 @@
+.ig-quote-carousel.dragging .blaze-track {
+  cursor: grabbing;
+}
+
+/* pagination buttons */
+.ig-quote-carousel .blaze-pagination {
+  @apply flex gap-2 justify-center items-center;
+}
+
+.ig-quote-carousel .blaze-pagination button {
+  @apply w-4 h-4 scale-[.33] rounded-full bg-white;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.ig-quote-carousel .blaze-pagination button:has( + button.active ) {
+  @apply scale-[.66];
+}
+
+.ig-quote-carousel .blaze-pagination button.active + button {
+  @apply scale-[.66];
+}
+
+.ig-quote-carousel .blaze-pagination button.active {
+  @apply bg-[#ed166b] scale-100;
+}
+
+/* fix layout shifts */
+.ig-quote-carousel {
+  --slides-to-show: 1;
+}
+
+.ig-quote-carousel .blaze-pagination {
+  justify-content: center;
+}

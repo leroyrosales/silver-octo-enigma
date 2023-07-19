@@ -1,0 +1,84 @@
+// Gutenberg Button Options
+
+
+.button {
+        padding: 4rem 0 ;
+        width: 100%;
+    a {
+        text-decoration-line: none;
+        font-size: 50px;
+        font-style: normal;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        svg {
+            color: var(--primary);
+            background: #FFFF00;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        &:hover {
+            background-color:transparent;
+            svg {
+                background: #fff;
+            }
+        }
+            @media screen and (max-width: 500px) {
+                font-size: 22px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                gap:1em;
+             }
+
+            & svg {
+                font-size: 27px;
+                padding-bottom: 10px;
+
+
+                @media screen and (max-width: 500px) {
+                    // padding-bottom: 30px;
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+    }
+    &-wood-background {
+        background: url(/assets/images/wood.jpg);
+            color: #FFFF00;
+
+
+
+        &:hover {
+            color: #fff;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    &-no-border-green {
+        border: 0;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 2%;
+        color: #00311e;
+
+        &:hover {
+            color: #56e13b;
+        }
+    }
+
+    &-no-border-white {
+        border: 0;
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 2%;
+        color: #fff;
+
+        &:hover {
+            color: #56e13b;
+        }
+    }
+}

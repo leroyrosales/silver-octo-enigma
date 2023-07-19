@@ -1,0 +1,38 @@
+.ig-grit-elite-teams-cta {
+  @apply bg-primary p-4 rounded-[15px] relative hover:bg-secondary hover:text-black;
+}
+
+.ig-grit-elite-teams-cta figure,
+.ig-grit-elite-teams-cta figure img {
+  @apply mb-0 w-full;
+}
+
+.ig-grit-elite-teams-cta .wp-block-columns {
+  @apply mb-0;
+}
+
+.ig-grit-elite-teams-cta .is-layout-flex {
+  @apply flex flex-row justify-center;
+  flex-wrap: nowrap!important;
+}
+
+.ig-grit-elite-teams-cta .wp-block-column {
+  @apply flex items-center;
+}
+
+.ig-grit-elite-teams-cta h2 {
+  @apply text-3xl mb-0;
+}
+
+.ig-grit-elite-teams-cta h2 a {
+  @apply text-white not-italic no-underline hover:text-primary;
+}
+
+.ig-grit-elite-teams-cta h2 a:after {
+  @apply absolute top-0 bottom-0 right-0 left-0 z-[1];
+  content: "";
+}
+
+.ig-grit-elite-teams-cta-headline {
+  @apply text-base font-poppins;
+}

@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class="event-content" id="post-{{ post.ID }}" style="background-color: {{ background_color }};">
+		<div class="container mx-auto pb-24 lg:pt-24 grid lg:grid-cols-2 gap-4">
+			<article class="pt-8 pl-0 lg:pl-4 mx-auto lg:pt-0 2xl:pt-16">
+				<header>
+          {% if post.thumbnail %}
+					<picture>
+						<img class="w-full pb-8 lg:pb-16" srcset="{{ post.thumbnail.srcset }}" alt="{{ post.thumbnail.alt ?: post.thumbnail.title }}" />
+					</picture>
+					{% endif %}
+					<h1 class="px-4 xl:px-0 font-harriet-display normal-case text-[25px] md:text-[1.875rem] tracking-normal">{{ post.title }}</h1>
+					{% if duration__price %}<span class="px-4 xl:px-0 block pb-4 text-[14px] md:text-base font-poppins tracking-[.2em]">{{ duration__price }}</span>{% endif %}
+				</header>
+				<div class="px-4 xl:px-0">{{post.content}}</div>
+			</article>
+			{% if calendly_form_url or hubspot_form_id %}
+			<aside class="px-4">
+				{% if calendly_form_url %}
+					<!-- Calendly inline widget begin -->
+					<div class="calendly-inline-widget" data-url="{{ calendly_form_url }}?hide_event_type_details=1&hide_gdpr_banner=1&background_color=F6F6F6&primary_color=192800" style="padding:0;margin:0;position:relative;height:730px;"></div>
+					<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+					<!-- Calendly inline widget end -->
+				{% endif %}
+
+				{% if hubspot_form_id %}
+					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+					<script>
+						hbspt.forms.create({
+							region: "na1",
+							portalId: "{{ hubspot_portal_id }}",
+							css: "",
+							formId: "{{ hubspot_form_id }}"
+						});
+					</script>
+				{% endif %}
+			</aside>
+			{% endif %}
+		</div>
+	</section>
+
+{% endblock %}

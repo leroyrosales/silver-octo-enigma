@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "number-leading-zero": "never",
+    "at-rule-no-unknown": null,
+    "at-rule-empty-line-before": "never",
+    "declaration-no-important": true,
+    "max-nesting-depth": 3,
+    "selector-max-id": 0,
+    "string-quotes": "single"
+  }
+}

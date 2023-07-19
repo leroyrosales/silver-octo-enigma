@@ -1,0 +1,22 @@
+.recruiter-bio-card {
+  @apply rounded-b-2xl border-b-[1.875rem] border-primary
+}
+
+.recruiter-bio-card .wp-block-group__inner-container {
+  @apply flex flex-col;
+}
+
+.recruiter-bio-card h3 {
+  @apply leading-[1.16666666667] xl:leading-[1.1];
+}
+
+.recruiter-bio-card h1,
+.recruiter-bio-card h2,
+.recruiter-bio-card h4,
+.recruiter-bio-card h5 {
+  @apply leading-[1.1];
+}
+
+.recruiter-bio-card p {
+  @apply font-light xl:font-normal;
+}

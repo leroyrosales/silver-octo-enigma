@@ -1,0 +1,9 @@
+.wp-block-post-template.is-flex-container {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-[40px];
+}
+
+@media (min-width: 600px) {
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-3>li {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+{#
+  Title: Card
+  Description: Card
+  Category: grit
+  Icon: align-full-width
+  Keywords: card, compass
+  Mode: edit
+#}
+
+<div class="card flex flex-col gap-4 {{ classes }}"{% if fields.card_background %} style="background:{{ fields.card_background }}; padding:2em; margin-bottom:2em;" {% endif %}
+data-{{ block.id }} >
+    <picture>
+        <source media="(min-width: 800px)" srcset="{{ fields.image.url | resize( 800, 600, 'center' ) }} 1200w">
+        <source srcset="{{ fields.image.url | resize( 600, 450, 'center' ) }}">
+        <img loading="lazy" class="w-full"
+        src="{{ fields.image.url | resize( 600, 450, 'center' ) }}"
+        alt="{{ fields.image.alt ?: fields.image.title }}">
+    </picture>
+    <article class="flex flex-col md:flex-col gap-8 justify-between">
+        <div class="">
+            <h3>{{ fields.title }}</h3>
+            {{ fields.copy }}
+        </div>
+        {% if fields.services %}
+        <div>
+            <h4>Services</h4>
+            <ul class="list-disc pl-4">
+                {% for service in fields.services %}
+                    <li>{{ service.service }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if fields.cta %}
+            <a class="button" href="{{ fields.cta.link }}">{{ fields.cta.title}}</a>
+        {% endif %}
+    </article>
+</div>

@@ -1,0 +1,33 @@
+{#
+  Title: Superscript Card
+  Description: Block to add a card with an image and superscript text
+  Category: grit
+  Icon: editor-textcolor
+  Keywords: superscript, card, compass
+  Mode: edit
+  SupportsMode: false
+#}
+
+
+{% if fields.superscript or fields.image %}
+  {% if fields.link %}
+    <a href="{{fields.link.url}}" target="{{fields.link.target}}">
+  {% endif %}
+  <div class="card flex flex-col gap-4 {{ classes }}" data-{{ block.id }}>
+    {% if fields.superscript %}
+      <sup class="text-8xl font-founders-light -mb-28">{{ fields.superscript }}</sup>
+    {% endif %}
+    {% if fields.image %}
+      <picture>
+          <source media="(min-width: 800px)" srcset="{{ fields.image.url | resize( 800 ) }} 1200w">
+          <source srcset="{{ fields.image.url | resize( 600 ) }}">
+          <img loading="lazy" class="w-full"
+          src="{{ fields.image.url | resize( 600 ) }}"
+          alt="{{ fields.image.alt ?: card.image.title }}">
+      </picture>
+    {% endif %}
+  </div>
+  {% if fields.link %}
+    </a>
+  {% endif %}  
+{% endif %}

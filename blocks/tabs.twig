@@ -1,0 +1,68 @@
+{#
+  Title: Tabs
+  Description: Block to add tabs
+  Category: grit
+  Icon: align-pull-left
+  Keywords: tabs, tab
+  Mode: edit
+  SupportsMode: false
+#}
+
+{% if fields.tabs %}
+<section class="{{ classes }}">
+    <div class="stacks">
+    {% for item in fields.tabs %}
+    {% set uniqueId = random() %}
+        <input class="tabs" type="radio" id="{{ uniqueId }}" name="tabs" {% if loop.first %}checked{% endif %}>
+        {% if item.title %}
+            <label class="tabs h3" for="{{ uniqueId }}">
+                {{ item.title }}
+            </label>
+        {% endif %}
+
+        {% if item.content %}
+        <article class="info" for="{{ uniqueId }}">
+            {% if item.title %}
+                <h3>{{ item.title }}</h3>
+            {% endif %}
+            <div class="mb-8">
+                {{ item.content }}
+                {% if item.button %}
+                    <a class="mt-2 inline-block text-white rounded-full border-primary bg-primary hover:bg-white hover:text-primary focus:border-accent focus:bg-primary focus:text-white font-poppins text-base border-solid border-2 font-medium px-12 py-4 hover:no-underline focus:no-underline" href="{{ item.button.url }}" target="{{ item.button.target }}">{{ item.button.title }}</a>
+                {% endif %}
+            </div>
+        </article>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <div class="mobileShow center">
+    {% for item in fields.tabs %}
+    {% set uniqueId = random() %}
+        <article class="accord">
+            <input type="checkbox" id="{{ uniqueId }}">
+            <label class="accord-label" for="{{ uniqueId }}">
+                {{ item.title }}
+            </label>
+            <div class="accord-content">
+                <div class="mb-8">
+                    {% if item.title %}
+                        <h3>{{ item.title }}</h3>
+                    {% endif %}
+                    {{ item.content }}
+                    {% if item.button %}
+                        <a class="mt-2 inline-block text-white rounded-full border-primary bg-primary hover:bg-white hover:text-primary focus:border-accent focus:bg-primary focus:text-white font-poppins text-base border-solid border-2 font-medium px-12 py-4 hover:no-underline focus:no-underline" href="{{ item.button.url }}" target="{{ item.button.target }}">{{ item.button.title }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+.text-image-split-pattern {
+  @apply my-8;
+}
+
+.text-image-split-pattern figure {
+  @apply h-full lg:max-h-[600px];
+}
+
+.text-image-split-pattern figure.wp-block-media-text__media img {
+  @apply h-full object-cover;
+}
+
+.text-image-split-pattern h2 {
+  @apply font-poppins uppercase tracking-[.2em];
+}
+
+.text-image-split-pattern p {
+  @apply text-[1rem] mb-12 leading-7;
+}
+
+/* TODO: Figure out a less hacky way to do this in WP */
+@media (max-width: 1024px) {
+  .text-image-split-pattern figure {
+    max-height: 400px;
+  }
+  .text-image-split-pattern.wp-block-media-text.has-media-on-the-right {
+    grid-template-columns: 100%!important;
+  }
+  .text-image-split-pattern.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .text-image-split-pattern.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .text-image-split-pattern .wp-block-group__inner-container {
+    @apply pb-8;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-image-split-pattern figure {
+    max-height: 230px;
+  }
+}
+

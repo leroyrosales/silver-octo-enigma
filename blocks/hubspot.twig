@@ -1,0 +1,22 @@
+{#
+  Title: HubSpot form
+  Description: Block to embed a HubSpot form
+  Category: grit
+  Icon: forms
+  Keywords: hubspot, form
+  Mode: edit
+  SupportsMode: false
+#}
+
+<div class="hubspot-form {{ classes }}">
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "{{ hubspot_portal_id }}",
+    css: "",
+    {# submitButtonClass: "hs-button button <?php echo $btnClass; ?>", #}
+    formId: "{{ fields.form_id }}"
+  });
+</script>
+</div>

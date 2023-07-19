@@ -1,0 +1,21 @@
+{
+    "name": "leroyrosales/ig-grit",
+    "description": "wp theme using twig",
+    "require": {
+        "palmiak/timber-acf-wp-blocks": "^1.15",
+        "timber/timber": "^1.18"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "authors": [
+        {
+            "name": "Leroy Rosales",
+            "email": "leroy.rosales@insightglobal.com"
+        }
+    ]
+}

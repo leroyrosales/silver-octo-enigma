@@ -1,0 +1,71 @@
+// Accordion Styles
+
+.tabs {
+  overflow: hidden;
+  & input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.tab {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 2px solid #aaaaaa;
+  &-label {
+    display: flex;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--primary);
+    justify-content: space-between;
+    margin: 0em;
+    align-items: center;
+    cursor: pointer;
+    /* Icon */
+    &::after {
+      content: '';
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10.4714' y='4.63681' width='3.05732' height='14.7261' rx='1.52866' fill='%2300283C'/%3E%3Crect x='19.363' y='10.4713' width='3.05732' height='14.7261' rx='1.52866' transform='rotate(90 19.363 10.4713)' fill='%2300283C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 21.1975C17.0796 21.1975 21.1975 17.0796 21.1975 12C21.1975 6.92039 17.0796 2.80255 12 2.80255C6.92039 2.80255 2.80255 6.92039 2.80255 12C2.80255 17.0796 6.92039 21.1975 12 21.1975ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z' fill='%2300283C'/%3E%3C/svg%3E%0A");
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+
+
+    }
+  }
+  &-content {
+    max-height: 0;
+    transition: max-height 0.25s ease-in-out, padding 0.35s ease-in-out;
+    overflow: hidden;
+    padding: 0;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    cursor: pointer;
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    &::after {
+      content: '';
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='19.3628' y='10.4713' width='3.05732' height='14.7261' rx='1.52866' transform='rotate(90 19.3628 10.4713)' fill='%2300283C'/%3E%3Crect x='19.3628' y='10.4713' width='3.05732' height='14.7261' rx='1.52866' transform='rotate(90 19.3628 10.4713)' fill='%2300283C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 21.1975C17.0796 21.1975 21.1975 17.0796 21.1975 12C21.1975 6.92039 17.0796 2.80255 12 2.80255C6.92039 2.80255 2.80255 6.92039 2.80255 12C2.80255 17.0796 6.92039 21.1975 12 21.1975ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z' fill='%2300283C'/%3E%3C/svg%3E%0A");
+      width: 24px;
+      height: 24px;
+      text-align: center;
+
+
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em 0;
+  }
+}

@@ -1,0 +1,7 @@
+.error404 {
+  @apply bg-gradient-to-b from-secondary via-transparent to-transparent;
+}
+
+.error404 a {
+  @apply hover:bg-white;
+}

@@ -1,0 +1,34 @@
+{#
+  Title: Accordion
+  Description: Block to add an accordion
+  Category: grit
+  Icon: menu-alt3
+  Keywords: accordions, accordion
+  Mode: edit
+  SupportsMode: false
+#}
+
+{% if fields.accordion %}
+<section class="{{ classes }}">
+    <div class="tabs center max-w-[660px] mx-auto">
+    {% for item in fields.accordion %}
+    {% set uniqueId = random() %}
+        <div class="tab py-4">
+            <input type="checkbox" id="{{ uniqueId }}" >
+                    {% if item.title %}
+                        <label class="tab-label h4" for="{{ uniqueId }}">
+                            {{ item.title }}
+                        </label>
+                    {% endif %}
+
+                    {% if item.content %}
+                        <div class="tab-content">
+                            {{ item.content }}
+                        </div>
+                    {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+</section>
+{% endif %}
+

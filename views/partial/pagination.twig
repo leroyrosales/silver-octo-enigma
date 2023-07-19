@@ -1,0 +1,21 @@
+{% if posts.pagination.pages is not empty %}
+    <nav class="pagination-block d-flex justify-content-center">
+        <ul class="pagination">
+
+            {# Previous #}
+            {% if posts.pagination.prev %}
+                <li class="page-item pe-3">
+                    <a class="featured-posts--cta featured-link-cta h4 pt-5 pb-3 text-uppercase text-decoration-none" href="{{ posts.pagination.prev.link }}">&larr; Previous</a>
+                </li>
+            {% endif %}
+
+            {# Next #}
+            {% if posts.pagination.next %}
+                <li class="page-item ps-3">
+                    <a class="featured-posts--cta featured-link-cta h4 pt-5 pb-3 text-uppercase text-decoration-none" href="{{ posts.pagination.next.link }}">Next &rarr;</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

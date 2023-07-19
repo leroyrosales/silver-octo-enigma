@@ -1,0 +1,18 @@
+/* Single Post styles */
+.featured-img-gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 0, 1) 0%, rgba(255, 255, 0, 0) 75%);
+}
+
+.prev-post-button a:after,
+.next-post-button a:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0,0,0,0);
+}
+

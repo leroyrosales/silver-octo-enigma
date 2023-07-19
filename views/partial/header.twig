@@ -1,0 +1,30 @@
+<a class="sr-only focus:not-sr-only h-32 text-black" href="#content">{{ _e( 'Skip to content') }}</a>
+<section class="header bg-primary">
+	{% block header %}
+		<div class="wrapper py-4 relative flex flex-row">
+			<a class="relative right-[calc(-40px/2)] block w-fit mx-auto hover:bg-transparent focus:bg-transparent" href="{{ site.url }}" title="{{ site.title }}" rel="home" aria-label="home">
+				<svg class="w-full max-w-[107px] xl:max-w-[126px] mx-auto" viewBox="0 0 215 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M158.01 27.54H152.12V67.7101H158.01V27.54Z" fill="white"/>
+					<path d="M206.32 45.9001H185.84V51.4501H199.94C199.057 54.7162 197.069 57.5752 194.314 59.5403C191.56 61.5053 188.21 62.4549 184.834 62.2274C181.458 61.9999 178.265 60.6093 175.799 58.2924C173.334 55.9756 171.747 52.8757 171.31 49.5205C170.873 46.1654 171.612 42.7625 173.402 39.8912C175.192 37.0199 177.922 34.8578 181.127 33.7729C184.332 32.6881 187.813 32.7476 190.979 33.9414C194.145 35.1351 196.799 37.3893 198.49 40.3201L203.64 37.3201C201.14 33.0069 197.158 29.7494 192.435 28.1544C187.712 26.5594 182.57 26.7357 177.967 28.6505C173.364 30.5652 169.614 34.0879 167.416 38.5622C165.218 43.0365 164.721 48.1573 166.018 52.9708C167.315 57.7843 170.317 61.9622 174.466 64.7263C178.615 67.4903 183.627 68.652 188.569 67.9949C193.51 67.3379 198.045 64.9068 201.327 61.1547C204.609 57.4026 206.416 52.5853 206.41 47.6001C206.41 47.0401 206.37 46.4701 206.32 45.9001Z" fill="white"/>
+					<path d="M124.3 68.1898C135.66 68.1898 144.87 58.9803 144.87 47.6198C144.87 36.2593 135.66 27.0498 124.3 27.0498C112.939 27.0498 103.73 36.2593 103.73 47.6198C103.73 58.9803 112.939 68.1898 124.3 68.1898Z" fill="#FF0069"/>
+					<path d="M76.4401 68.1898C87.8006 68.1898 97.0101 58.9803 97.0101 47.6198C97.0101 36.2593 87.8006 27.0498 76.4401 27.0498C65.0796 27.0498 55.8701 36.2593 55.8701 47.6198C55.8701 58.9803 65.0796 68.1898 76.4401 68.1898Z" fill="#FFD700"/>
+					<path d="M28.57 68.1898C39.9305 68.1898 49.14 58.9803 49.14 47.6198C49.14 36.2593 39.9305 27.0498 28.57 27.0498C17.2095 27.0498 8 36.2593 8 47.6198C8 58.9803 17.2095 68.1898 28.57 68.1898Z" fill="#00D6F2"/>
+				</svg>
+			</a>
+			{% if primary_menu %}
+					<button type="button" class="w-[40px] relative" aria-controls="mobile-menu" aria-expanded="false" data-mobile-nav-btn>
+						<span class="sr-only">Open main menu</span>
+						<span class="main-menu-btn-icon"></span>
+					</button>
+			{% endif %}
+		</div>
+	{% endblock %}
+</section>
+
+<nav class="menu-all w-full relative overflow-y-scroll bg-primary" id="main-menu-all" role="navigation" aria-label="Main menu" data-mobile-nav>
+		<div class="menu-main wrapper flex flex-col">
+			{% include "partial/menu.twig" with { 'menu': primary_menu.get_items } %}
+		</div>
+</nav>
+
+{% include 'partial/breadcrumbs.twig' %}

@@ -1,0 +1,42 @@
+{#
+  Title: Workshop Cards
+  Description: Block to showcase workshop cards
+  Category: grit
+  Icon: superhero
+  Keywords: compass, workshop, cards
+  SupportsJSX: true
+#}
+
+{% if fields.cards or fields.cards and is_preview %}
+<section class="py-16 {{ classes }}">
+  {% if fields.cards %}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-8 py-16">
+    {% for card in fields.cards %}
+        <article class="flex flex-col gap-0">
+          {% if card.image %}
+            <picture>
+              <img class="w-full h-full max-h-[186px] lg:max-h-[13.75rem] object-cover" srcset="{{ fn( 'wp_get_attachment_image_srcset', card.image.id ) }}" alt="{{ card.image.alt ?: card.title }}" />
+            </picture>
+          {% endif %}
+          <div class="text-white p-8 flex flex-col h-full" style="background-color: {{ card.bg_color }}">
+            {% if card.title %}
+              <h2 class="text-[1.875rem]">{{ card.title }}</h2>
+            {% endif %}
+            {% if card.subtitle %}
+              <h3 class="text-[16px] font-poppins uppercase tracking-[0.2em]">{{ card.subtitle }}</h3>
+            {% endif %}
+            {% if card.description %}
+              <p class="pb-8 lg:pb-4">{{ card.description }}</p>
+            {% endif %}
+            {% if card.cta %}
+              <div class="is-layout-flex wp-block-buttons mt-auto">
+                <div class="wp-block-button"><a class="wp-block-button__link has-tertiary-color has-secondary-background-color has-text-color has-background wp-element-button" href="{{ card.cta.url }}">{{ card.cta.title }}</a></div>
+              </div>
+            {% endif %}
+          </div>
+        </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% endif %}

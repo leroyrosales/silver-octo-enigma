@@ -1,0 +1,15 @@
+<!-- Cookie Banner -->
+<script>
+(function () {
+    var s = document.createElement('script');
+    s.src = 'https://cdn-prod.eu.securiti.ai/consent/cookie-consent-sdk.js';
+    s.setAttribute('data-tenant-uuid', '25759447-fd66-4347-8616-99474e045132');
+    s.setAttribute('data-domain-uuid', 'c7570db9-239b-4b11-85b7-4898b6257d1f');
+    s.setAttribute('data-backend-url', 'https://app.eu.securiti.ai');
+    s.defer = true;
+    var parent_node = document.head || document.body;
+    parent_node.appendChild(s);
+    s.addEventListener('load', function() { window.initCmp(); });
+})()
+</script>
+<!-- Google Tag Manager (noscript) -->

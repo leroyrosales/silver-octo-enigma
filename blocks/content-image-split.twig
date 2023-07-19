@@ -1,0 +1,33 @@
+{#
+  Title: Content Image Split
+  Description: Block for Content/Image cards
+  Category: grit
+  Icon: table-col-after
+  Keywords: compass, content image, split
+  Mode: edit
+#}
+
+<section class="py-8 {{ classes }}">
+  <article class="flex flex-col-reverse lg:grid lg:grid-cols-[427px_auto] lg:min-h-[600px] " style="background-color: {{ fields.design.background_color }}">
+    <div class="px-4 py-[30px] lg:pb-[50px] md:pl-[50px] md:pt-[50px] md:pr-12">
+      {% if fields.content.headline %}
+        <h2 class="font-poppins uppercase tracking-[.2em] mb-[30px] lg:mb-[50px]">{{ fields.content.headline }}</h2>
+      {% endif %}
+      {% if fields.content.copy %}
+        <div class="text-base lg:text-[1.125rem] mb-[30px] lg:mb-[50px] leading-7">{{ fields.content.copy }}</div>
+      {% endif %}
+      {% if fields.content.cta %}
+        <a class="wp-block-button__link has-white-color has-primary-background-color has-text-color has-background wp-element-button" href="{{ fields.content.cta.link }}" target="{{ fields.content.cta.target }}">{{ fields.content.cta.title }}</a>
+      {% endif %}
+    </div>
+    {% if fields.design.image %}
+    <picture>
+        <source media="(min-width: 800px)" srcset="{{ fields.design.image.url }} 1200w">
+        <source srcset="{{ fields.design.image.url | resize( 600 ) }}">
+        <img loading="lazy" class="h-[230px] md:h-full object-cover w-full"
+        src="{{ fields.design.image.url | resize( 600 ) }}"
+        alt="{{ fields.design.image.alt ?: fields.design.image.title }}">
+    </picture>
+    {% endif %}
+  </article>
+</section>

@@ -1,0 +1,12 @@
+{#
+  Title: Large CTA Buttons
+  Description: Large CTA Buttons
+  Category: grit
+  Icon: align-full-width
+  Keywords: button, compass
+  Mode: edit
+#}
+
+<button class="button {{ fields.button_style }} ">
+    <a class="font-poppins" href="{{ fields.link.url }}" target="{{ fields.link.target }}" {% if fields.link.target == "_blank" %}rel="noopener"{% endif %}>{{ fields.link.title }} <i class="fa-solid fa-arrow-right-long"></i> {% if fields.link.target == "_blank" %}<span class="sr-only">opens in new window</span>{% endif %}</a>
+</button>

@@ -1,0 +1,37 @@
+{% include 'shared/html-header.twig' %}
+
+{% block html_head_container %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		{% if page_attributes.remove_nav %}
+			{% include 'partial/landing-header.twig' %}
+		{% else %}
+			{% include 'partial/header.twig' %}
+		{% endif %}
+		{% block head %}
+		{% endblock %}
+
+{% endblock %}
+
+	{% include 'shared/securiti-script.twig' %}
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKJD72G"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+		<main id="content" role="main" class="content-wrapper{% if page_attributes.add_gradient %} bg-gradient-to-b from-secondary via-transparent to-transparent{% endif %}">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</main>
+
+		{% block footer %}
+			{% include 'partial/js-files.twig' %}
+
+			{% include 'footer.twig' %}
+
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

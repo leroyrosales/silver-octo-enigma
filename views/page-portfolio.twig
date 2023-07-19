@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section class="projects container py-5">
+        <div class="row py-5">
+            {% for project in projects %}
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="projects--content">
+                        <a href="{{ function('get_permalink', project.ID )}}">
+                        <div class="projects--content-overlay"></div>
+                        <picture>
+                            <img class="img-fluid projects--content-image" src="{{ Image(project).src | resize( 600, 600, 'center' )}}">
+                        </picture>
+                        <div class="projects--content-details">
+                            <h2 class="projects--content-title text-white">{{ project.title }}</h2>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row py-3">
+            <div class="col-12">
+                {% include 'partial/pagination.twig' with { pagination: projects.pagination({show_all: false, mid_size: 3, end_size: 2}), posts: projects } %}
+            </div>
+        </div>
+    </section>
+
+    {% if acclaim_text %}
+        {% include 'partial/acclaim-section.twig' %}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{#
+  Title: Quote Carousel
+  Description: Block to add a carousel of quotes
+  Category: grit
+  Icon: format-quote
+  Keywords: carousel, quote
+  Mode: edit
+  SupportsMode: false
+  SupportsAlign: false
+#}
+
+<section class="py-12 xl:py-24 text-center text-white bg-primary px-4">
+  {% if fields.headline %}
+    <h2 class="text-white">{{ fields.headline }}</h2>
+  {% endif %}
+  <div class="ig-quote-carousel">
+    <div class="blaze-container">
+      <div class="blaze-track-container">
+        <div class="blaze-track">
+          {% for quote in fields.quote %}
+            <article>
+              <blockquote class="w-full max-w-[53.375rem] mx-auto">
+                <q class="block pb-6">{{ quote.quote }}</q>
+                <cite class="not-italic pb-6">{{ quote.credit }} {{ quote.companyorg ? '| '~quote.companyorg }}</cite>
+              </blockquote>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- pagination container -->
+      <div class="blaze-pagination"></div>
+    </div>
+  </div>
+</section>

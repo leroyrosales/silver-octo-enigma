@@ -1,0 +1,16 @@
+{% if menu %}
+  <ul class="list-none flex flex-col text-[1.5rem] max-h-full flex-auto" id="{{ menu_id }}">
+  {% for item in menu %}
+    <li class="text-decoration-none flex-1 flex justify-center items-center {% if not loop.last %}border-secondary border-end pe-2{% endif %} {{ item.classes | join(' ') }}">
+      <a class="text-white no-underline font-trenda-semibold" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}
+{% if primary_ctas %}
+  <div class="flex flex-col xl:flex-row gap-4 pt-6 pb-12 max-w-lg xl:mx-auto">
+  {% for cta in primary_ctas %}
+    <a class="flex-1 min-w-[225px] no-underline font-poppins border-2 border-white py-4 px-12 rounded-full {{ loop.index0 is odd ? 'bg-white text-primary hover:bg-primary hover:text-white focus:bg-primary focus:text-white' : 'text-white hover:bg-white hover:text-primary focus:bg-white focus:text-primary' }} hover:no-underline focus:no-underline font-medium" target="{{ cta.cta.target }}" href="{{ cta.cta.url }}">{{ cta.cta.title }}</a>
+  {% endfor %}
+  </div>
+{% endif %}

@@ -1,0 +1,40 @@
+<!-- Slider main container -->
+<section class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper swiper__hero">
+
+        {% for slide in slider %}
+
+            <style>
+                .swiper-slide--{{loop.index}} {
+                    background-image:url("{{ slide.slide.url|resize(400, 'center', 'top') }}");
+                    background-size: cover;
+                    background-position: center;
+                }
+                @media screen and (min-width: 900px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ slide.slide.url|resize(1200, 700, 'center', 'center') }}");
+                    }
+                }
+                @media screen and (min-width: 1200px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ slide.slide.url|resize(1600, 800, 'center', 'center') }}");
+                    }
+                }
+                @media screen and (min-width: 2000px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ slide.slide.url|resize(2000, 940, 'center', 'center') }}");
+                    }
+                }
+            </style>
+            <!-- Slides -->
+            <div class="swiper-slide swiper-slide--{{loop.index}} d-flex"></div>
+
+        {% endfor %}
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev swiper__hero_btn"></div>
+    <div class="swiper-button-next swiper__hero_btn"></div>
+
+</section>

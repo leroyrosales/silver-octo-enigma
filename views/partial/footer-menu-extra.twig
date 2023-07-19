@@ -1,0 +1,11 @@
+{% if menu %}
+  <nav>
+    <ul class="flex flex-wrap justify-center pb-4 flex-col items-start gap-y-0 lg:items-center lg:flex-row flex-wrap lg:gap-x-8 gap-y-3 font-poppins font-bold uppercase lg:[&>*]:max-w-[14rem] leading-none lg:text-center " id="{{ menu_id }}">
+    {% for item in menu %}
+      <li class="pb-8 items-start lg:pb-0 lg:justify-center tracking-wider {{ item.classes | join(' ') }}">
+        <a style="" class="has-soft-yellow-color hover:text-white" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

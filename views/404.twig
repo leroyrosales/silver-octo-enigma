@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+	<div id="content" class="content-wrapper text-center pt-24 pb-16">
+		<section>
+			<article class="container mx-auto px-4 lg:px-0 content-type-{{post.post_type}}" id="post-{{post.ID}}">
+				<h1 class="text-8xl lg:text-[150px]  pb-16">404 error</h1>
+				<h2 class="h3">Sorry, we couldn't find the page you were looking for.</h2>
+				{% if fourofour_copy %}
+					<hr class="my-16 border-2 border-primary max-w-[941px] mx-auto"/>
+					{{ fourofour_copy }}
+				{% endif %}
+			</article>
+		</section>
+	</div><!-- /content-wrapper -->
+
+{% endblock %}

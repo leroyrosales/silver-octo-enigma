@@ -1,0 +1,65 @@
+{
+    "key": "group_6419e86487e13",
+    "title": "Block: Upcoming Sessions",
+    "fields": [
+        {
+            "key": "field_6419e93347d7f",
+            "label": "Sessions",
+            "name": "sessions",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_6419e96a47d80",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Session",
+            "sub_fields": [
+                {
+                    "key": "field_6419e96a47d80",
+                    "label": "Session",
+                    "name": "session",
+                    "type": "text",
+                    "instructions": "Add selection date as it appears on the HubSpot form, ex: April 25 - 27 and June 27 - 29. Must include spaces and '-'.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "April 25 - 27",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/upcoming-session"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1679421517
+}

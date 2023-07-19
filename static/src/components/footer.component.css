@@ -1,0 +1,20 @@
+footer,
+footer h4 {
+  @apply text-[14px] lg:text-[16px];
+}
+
+footer a {
+  @apply no-underline not-italic text-white;
+}
+
+footer .svg-inline--fa.fa-circle {
+  @apply w-[35px] h-[35px];
+}
+
+footer .svg-inline--fa.fa-circle path {
+  @apply fill-white hover:fill-secondary focus:fill-secondary;
+}
+
+footer a:focus .svg-inline--fa.fa-circle path {
+  @apply fill-secondary;
+}

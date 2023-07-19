@@ -1,0 +1,43 @@
+<section class="mx-auto pb-4 lg:pb-8 max-w-[1240px]" data-video-id={{ post.vimeo_video_id }}>
+	<div class="relative">
+		<div class="grid overflow-hidden isolate" tabindex="0" data-video-loop>
+			<figure class="col-span-full row-span-full overflow-hidden m-0 p-0">
+				{% if post.video_thumbnail %}
+					<picture>
+						<source media="(min-width: 800px)" srcset="{{ post.video_thumbnail.url|resize(1280, 720) }} 1200w">
+						<img loading="lazy" class="h-full w-full"
+						srcset="{{ fn( 'wp_get_attachment_image_srcset', post.video_thumbnail.id ) }}"
+						alt="{{ post.video_thumbnail.alt ?: post.video_thumbnail.title }}">
+							<svg tabindex="0" viewBox="0 0 125 125" class="w-20 h-20 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:cursor-pointer" viewBox="0 0 125 125" xmlns="http://www.w3.org/2000/svg" data-playbutton>
+								<circle cx="70.8334" cy="62.5" r="37.5" class="fill-primary" />
+								<path d="M62.5 0C28.0427 0 0 28.0427 0 62.5C0 96.9573 28.0427 125 62.5 125C96.9573 125 125 96.9573 125 62.5C125 28.0427 96.9573 0 62.5 0ZM49.6247 82.9283C52.4551 69.2992 52.3628 55.3932 49.5631 42.0564L84.6665 62.5L49.6247 82.9129V82.9283Z" class="fill-secondary hover:fill-white"/>
+							</svg>
+					</picture>
+				{% else %}
+					<picture>
+						<source srcset="{{ theme.link ~ '/assets/images/Compass_Pattern_Wood_RGB.jpg' }}">
+						<img loading="lazy" class="h-full w-full"
+						src="{{ theme.link ~ '/assets/images/Compass_Pattern_Wood_RGB.jpg' }}"
+						alt="Pattern image">
+							<svg tabindex="0" viewBox="0 0 125 125" class="w-20 h-20 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:cursor-pointer hover:fill-white" viewBox="0 0 125 125" xmlns="http://www.w3.org/2000/svg" data-playbutton>
+								<circle cx="70.8334" cy="62.5" r="37.5" class="fill-primary" />
+								<path d="M62.5 0C28.0427 0 0 28.0427 0 62.5C0 96.9573 28.0427 125 62.5 125C96.9573 125 125 96.9573 125 62.5C125 28.0427 96.9573 0 62.5 0ZM49.6247 82.9283C52.4551 69.2992 52.3628 55.3932 49.5631 42.0564L84.6665 62.5L49.6247 82.9129V82.9283Z" class="fill-secondary hover:fill-white"/>
+							</svg>
+					</picture>
+				{% endif %}
+			</figure>
+			<iframe class="col-span-full row-span-full w-full aspect-video" src="https://player.vimeo.com/video/{{ post.vimeo_video_id }}?background=1&amp;h=bed5d66fd7&amp;color=ffd700&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay;" aria-role="hidden" tabindex="-1" loading="lazy" data-vimeo-defer="" role="presentation" aria-describedby="video-description"></iframe>
+		</div>
+		{# Video content iframe #}
+		<div data-content-iframe></div>
+		{# Controls #}
+		<div class="absolute z-10 top-1 left-1 lg:top-3 lg:left-3">
+			<button class="text-sm lg:text-base w-auto bg-primary rounded-3xl border-white border-2 px-4 lg:px-6 py-2 font-sans text-white uppercase bg-opacity-75 hover:bg-opacity-100 focus:bg-opacity-75 focus:bg-white focus:text-primary" aria-label="Pause button" aria-pressed="false" data-playpause>Stop background video</button>
+		</div>
+		{% if post.video_description %}
+			<p class="no-script-hide sr-only" id="video-description"><a href="https://vimeo.com/{{ post.vimeo_video_id }}" target="_blank" tabindex="-1">{{ post.video_description }}</a></p>
+		{% else %}
+			<p class="no-script-hide sr-only" id="video-description"><a href="https://vimeo.com/{{ post.vimeo_video_id }}" target="_blank" tabindex="-1">Watch this video in a new tab on Vimeo's website.</a></p>
+		{% endif %}
+	</div>
+</section>

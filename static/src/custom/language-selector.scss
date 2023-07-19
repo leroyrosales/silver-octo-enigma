@@ -1,0 +1,73 @@
+.dropbtn {
+  background-color: #fff;
+  width: 163px;
+  height: 31px;
+  border: none;
+  color: var(--primary);
+  border-radius: 5px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:12px;
+  font-weight: 300;
+  letter-spacing: .01em;
+  padding:0;
+  text-transform: none;
+  justify-content: space-evenly;
+  &:hover {
+        box-shadow: none;
+  }
+}
+
+.dropup {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  font-size: 12px;
+  height: 38px;
+  border-bottom: 1px solid #c1c1c1;
+  background-color: #fff;
+  color: #00283c;
+  min-width: 163px;
+  top: -35px;
+  border-radius: 5px 5px 0px 0px;
+  z-index: 1;
+  align-items: center;
+  gap: 15px;
+  padding: 0em;
+}
+
+.dropup-content a {
+  color: black;
+  font-weight: 100 !important;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dropup-content a:hover {
+  background-color: #f2f2f2;
+  border-radius: 5px 5px 0px 0px;
+  height: 38px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtn {
+  background-color: #fff;
+}

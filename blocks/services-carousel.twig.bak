@@ -1,0 +1,42 @@
+{#
+  Title: Services Carousel
+  Description: Block to add a carousel of cards
+  Category: grit
+  Icon: slides
+  Keywords: carousel, services, cards, compass
+  Mode: edit
+  SupportsMode: false
+#}
+
+<section class="swiper services-swiper {{ classes }}">
+    <div class="swiper-wrapper" aria-labelledby="services-scrollbar">
+    {% for card in fields.services_card %}
+        <div class="swiper-slide card flex flex-col gap-4" data-{{ card.id }}>
+            <picture>
+                <source media="(min-width: 800px)" srcset="{{ card.image.url | resize( 800 ) }} 1200w">
+                <source srcset="{{ card.image.url | resize( 600 ) }}">
+                <img loading="lazy" class="w-full"
+                src="{{ card.image.url | resize( 600 ) }}"
+                alt="{{ card.image.alt ?: card.image.title }}">
+            </picture>
+            <article class="lg:grid grid-cols-2 gap-2">
+                <h3 class="col-span-2 mb-2 text-primary">{{ card.title }}</h3>
+                <article>
+                    {{ card.copy }}
+                </article>
+                {% if card.services %}
+                    <ul class="list-none lg:pl-16">
+                        {% for service in card.services %}
+                            <li>{{ service.service }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if card.cta %}
+                    <a class="button" href="{{ card.cta.link }}">{{ card.cta.title}}</a>
+                {% endif %}
+            </article>
+        </div>
+    {% endfor %}
+    </div>
+    <nav class="swiper-scrollbar" id="services-scrollbar"></nav>
+</section>

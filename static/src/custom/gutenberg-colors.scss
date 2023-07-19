@@ -1,0 +1,47 @@
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: (
+  "primary": #00283c,
+  "secondary": #ff0069, // not accessible on white ( 3.84 : 1 )
+  "tertiary": #ffd602,
+  "accent": #00d6e6,
+  "grey": #f2f2f2,
+  "grey-dark": #555,
+  "black": #000,
+  "white": #FFF,
+  "light-blue": #b4e3e5,
+
+  // From original site
+  // "link": #007a82,
+  "link-hover": #e80060,
+  "link-hover-reverse": #00dae8,
+
+  "error": #c02b0a,
+
+  // From Zeplin
+  "link": #0061f3,
+  "family-blue": #00d6f2,
+
+
+);
+
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+
+// Gutenberg gradient options
+// Fade out
+.has-fade-out-gradient-background {
+    background: linear-gradient(180deg, rgba(255,255,0,1) 0%, rgba(255,255,0,0) 100%);
+}
+
+.has-purple-gradient-background {
+  background: linear-gradient(83.26deg, #8D6465 19.68%, #6F42B5 100.68%);
+}
